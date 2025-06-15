@@ -15,7 +15,12 @@ ul li {
 
 
 .nav-link {
+  color: #e9ecef;
   transition: color 0.2s ease;
+}
+
+.nav-link:visited {
+  color: #e9ecef;
 }
 
 .nav-link:hover {
