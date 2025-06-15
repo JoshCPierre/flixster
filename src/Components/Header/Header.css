@@ -1,0 +1,29 @@
+.header-container {
+  width: 100vw;
+  padding: 10px;
+  background-color: #212529;
+}
+
+nav {
+  flex: 1;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style-type: none;
+  margin: 0px;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:visited {
+  color: #e9ecef
+}
+
+.website-title {
+  flex: 2;
+}

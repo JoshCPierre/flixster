@@ -1,0 +1,53 @@
+.movie-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 520px;
+    width: 280px;
+    border: 1px solid black;
+    border-radius: 12px;
+    background-color: rgb(44, 44, 44);
+    transition: transform 0.2s ease;
+    overflow: hidden; 
+}
+
+.movie-card-container:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.movie-title {
+ margin: 0px;
+}
+
+
+.movie-rating {
+    margin: 0px;
+}
+
+.movie-image {
+    border-radius: inherit;
+    width: 100%;
+
+}
+
+.movie-favorite {
+    height: 20px;
+    width: 20px;
+    margin-left: 6px;
+}
+
+
+.liked-watched-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.movie-watched {
+    flex: 1;
+    border-radius: 8px;
+    margin-right: 6px;
+    margin-left: 12px;
+}

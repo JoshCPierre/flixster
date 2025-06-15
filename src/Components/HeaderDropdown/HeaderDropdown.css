@@ -1,0 +1,8 @@
+.dropdown-menu {
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+}
