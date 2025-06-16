@@ -6,6 +6,8 @@
 
 .website-title {
   font-size: 50px;
+   text-shadow: 1px 1px #ffffff;
+
 }
 
 
@@ -24,5 +26,7 @@ ul li {
 }
 
 .nav-link:hover {
-  color: rgb(116, 114, 114);
+  color: rgb(213, 37, 37);
+  padding-bottom: 4px;
+  border-bottom: 2px solid rgb(213, 37, 37);
 }

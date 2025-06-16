@@ -3,11 +3,11 @@ import "./Header.css";
 import BottomHeader from "./BottomHeader";
 import TopHeader from "./TopHeader";
 
-const Header = () => {
+const Header = ({handleSearchChange, clearSearch, searchForMovies, searchQuery, handleSortOption, sortOption}) => {
   return (
     <div className="header-container">
       <TopHeader />
-      <BottomHeader />
+      <BottomHeader handleSearchChange={handleSearchChange} clearSearch={clearSearch} searchForMovies={searchForMovies} searchQuery={searchQuery} handleSortOption={handleSortOption} sortOption={sortOption}/>
     </div>
   );
 };

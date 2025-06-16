@@ -1,21 +1,7 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 
-const SearchBar = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
-  function clearSearch() {
-    setSearchQuery("");
-  }
-
-  function searchForMovies() {
-    
-  }
-
+const SearchBar = ({handleSearchChange, clearSearch, searchForMovies, searchQuery}) => {
 
 
   return (

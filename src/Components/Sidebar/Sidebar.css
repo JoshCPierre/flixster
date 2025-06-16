@@ -1,0 +1,19 @@
+.sidebar-nav-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #2d2d2e;
+    flex: 1;
+    align-items: center;
+}
+
+.sidebar-nav-container img{
+    width: 32px;
+    margin-bottom: 16px;
+    margin-top: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.sidebar-nav-container img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}

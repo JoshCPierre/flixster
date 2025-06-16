@@ -9,8 +9,13 @@
 }
 
 .app-movie-list {
-  flex: 1;
   margin-bottom: 40px;
+  flex: 24;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
 }
 
 @media (max-width: 600px) {

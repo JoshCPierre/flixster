@@ -29,9 +29,10 @@
     cursor: pointer;
     margin: 32px auto 0 auto;
     display: block;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s ease;
 }
 
 .load-more:hover {
-    background: #222;
+    /* background: #222; */
+    color:rgb(213, 37, 37);
 }

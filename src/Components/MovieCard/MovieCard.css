@@ -4,16 +4,17 @@
     justify-content: space-between;
     height: 520px;
     width: 280px;
-    border: 1px solid black;
     border-radius: 12px;
     background-color: rgb(44, 44, 44);
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, border 0.2s ease;
     overflow: hidden; 
+    box-sizing: border-box;
 }
 
 .movie-card-container:hover {
     transform: scale(1.02);
     cursor: pointer;
+    border: 5px solid rgb(193, 33, 33);
 }
 
 .movie-title {
@@ -27,6 +28,8 @@
 
 .movie-image {
     border-radius: inherit;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
     width: 100%;
 
 }
@@ -37,6 +40,11 @@
     margin-left: 6px;
 }
 
+
+.movie-watched {
+    cursor: pointer;
+    background-color: back;
+}
 
 .liked-watched-container {
     display: flex;
