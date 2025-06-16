@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import MovieList from "./Components/MovieList/MovieList";
-import MovieGrid from "./Components/MovieGrid/MovieGrid";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Sidebar from "./Components/Sidebar/Sidebar";
+import AppMainContent from "./Components/AppMainContent/AppMainContent";
 
 // now playing: https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}
 // popular: https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}
@@ -20,9 +19,7 @@ const App = () => {
   const [searchQuery, setSearchQuery] = useState(""); // submit button
   const [sortOption, setSortOption] = useState("normal"); // sort
   const [submittedQuery, setSubmittedQuery] = useState("");
-
   const [gridApiPage, setGridApiPage] = useState(1);
-  
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
@@ -63,31 +60,14 @@ const App = () => {
       ></Header>
       <main>
         <Sidebar></Sidebar>
-        <div className="app-movie-list">
-          <MovieGrid
-            id="now-playing"
-            section_title="Now Playing"
-            sortOption={sortOption}
-            submittedQuery={submittedQuery}
-            gridApiPage={gridApiPage}
-            setGridApiPage={setGridApiPage}
-          ></MovieGrid>
-          <MovieList
-            section_title="Popular"
-            id="popular"
-            section_link="popular"
-          ></MovieList>
-          <MovieList
-            section_title="Top Rated"
-            id="top-rated"
-            section_link="top_rated"
-          ></MovieList>
-          <MovieList
-            section_title="Upcoming"
-            id="upcoming"
-            section_link="upcoming"
-          ></MovieList>
-        </div>
+        <AppMainContent
+          sortOption={sortOption}
+          submittedQuery={submittedQuery}
+          gridApiPage={gridApiPage}
+          setGridApiPage={setGridApiPage}
+          section_title=""
+          section_link=""
+        ></AppMainContent>
       </main>
       <Footer></Footer>
     </div>

@@ -5,12 +5,12 @@ import heartIcon from "../../assets/heart-white.svg";
 import watchedIcon from "../../assets/watched.png";
 
 
-const Sidebar = () => {
+const Sidebar = ({handleSidebarFavorites, handleSidebarWatched}) => {
   return (
     <nav className='sidebar-nav-container'>
         <img src={homeIcon}/>
-        <img src={heartIcon}/>
-        <img src={watchedIcon}/>
+        <img src={heartIcon} onClick={handleSidebarFavorites}/>
+        <img src={watchedIcon} onClick={handleSidebarWatched}/>
     </nav>
   )
 }
