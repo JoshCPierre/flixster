@@ -12,6 +12,17 @@
   justify-content: center;
 }
 
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #2f2f2f;
+  width: 55%;
+  height: 70%;
+  position: relative;
+  border-radius: 16px;
+  overflow-y: auto;
+}
+
 .close-button {
     font-size: 50px;
     cursor: pointer;
@@ -26,16 +37,7 @@
     color: red;
 }
 
-.modal-content {
-  display: flex;
-  flex-direction: column;
-  background-color: #2f2f2f;
-  width: 50%;
-  height: 70%;
-  position: relative;
-  border-radius: 16px;
-  overflow-y: auto;
-}
+
 
 .modal-info {
     display: flex;
@@ -51,18 +53,17 @@
 }
 
 .modal-top-container {
-     flex: 1;
-     flex-shrink: 0;
+    flex-shrink: 0;
     background-size: cover;
     position: relative;
-    min-height: 50%;
+    min-height: 55%;
 }
 
 
 
 .modal-bottom-container {
     padding: 0px 30px;
-    flex: 1;
+
 }
 
 .trailer-iframe {

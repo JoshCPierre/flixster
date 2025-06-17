@@ -17,7 +17,11 @@ const MovieGrid = ({
   sortOption,
   submittedQuery,
   gridApiPage,
-  setGridApiPage
+  setGridApiPage,
+  setShowFavoriteModal,
+  setShowWatchedModal,
+  setFavoriteMovies,
+  setWatchedMovies
 }) => {
   const [movies, setMovies] = useState([]);
   const [noMoreMovies, setNoMoreMovies] = useState(false); // if no more movies able to fetch
@@ -72,7 +76,7 @@ const MovieGrid = ({
       // normal fetch
       let url = "";
       if (submittedQuery) {
-        const formattedQuery = submittedQuery.replace(/ /g, '+');
+        const formattedQuery = submittedQuery.replace(/ /g, "+");
         url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${formattedQuery}}&page=${gridApiPage}`;
       } else if (sortOption === "normal") {
         url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&page=${gridApiPage}`;
@@ -102,7 +106,6 @@ const MovieGrid = ({
     fetchList(gridApiPage);
   }, [gridApiPage, sortOption, submittedQuery]);
 
-
   // clear movies when sortOption changes
   useEffect(() => {
     setGridApiPage(1);
@@ -118,6 +121,7 @@ const MovieGrid = ({
           <div className="movies-grid">
             {movies.map((movie) => (
               <MovieCard
+                movie={movie}
                 key={movie.id}
                 title={movie.title}
                 img={
@@ -127,13 +131,24 @@ const MovieGrid = ({
                 }
                 rating={movie.vote_average}
                 onClick={() => handleCardClick(movie.id)}
+                setShowFavoriteModal={setShowFavoriteModal}
+                setShowWatchedModal={setShowWatchedModal}
+                setWatchedMovies={setWatchedMovies}
+              setFavoriteMovies={setFavoriteMovies}
               />
             ))}
           </div>
         </section>
       )}
       {noMoreMovies && (
-        <div style={{ textAlign: "center", fontWeight: "bold", fontSize: "60px", margin: "50px" }}>
+        <div
+          style={{
+            textAlign: "center",
+            fontWeight: "bold",
+            fontSize: "60px",
+            margin: "50px",
+          }}
+        >
           No more movies
         </div>
       )}

@@ -4,6 +4,7 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import AppMainContent from "./Components/AppMainContent/AppMainContent";
+import FavoriteWatchedModal from "./Components/FavoriteWatchedModal/FavoriteWatchedModal";
 
 // now playing: https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}
 // popular: https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}
@@ -20,6 +21,11 @@ const App = () => {
   const [sortOption, setSortOption] = useState("normal"); // sort
   const [submittedQuery, setSubmittedQuery] = useState("");
   const [gridApiPage, setGridApiPage] = useState(1);
+  const [showFavoriteModal, setShowFavoriteModal] = useState(false);
+  const [showWatchedModal, setShowWatchedModal] = useState(false);
+
+  const [favoriteMovies, setFavoriteMovies] = useState([]);
+  const [watchedMovies, setWatchedMovies] = useState([]);
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
@@ -46,6 +52,40 @@ const App = () => {
     // console.log(searchQuery);
   }
 
+  const handleSidebarFavorites = () => {
+    setShowFavoriteModal((prevValue) => !prevValue);
+    console.log(favoriteMovies);
+    setShowWatchedModal(false); // disable the other one
+
+    console.log("side bar heart");
+  };
+
+  const handleSidebarWatched = () => {
+    setShowWatchedModal((prevValue) => !prevValue);
+    console.log(watchedMovies);
+    setShowFavoriteModal(false); // disable the other one
+
+    console.log("side bar watched");
+  };
+
+  const handleSidebarHome = () => {
+    setShowWatchedModal(false);
+    setShowFavoriteModal(false);
+    console.log("side bar home");
+  };
+
+
+  useEffect(() => {
+      if (showFavoriteModal || showWatchedModal) {
+        document.body.style.overflow = "hidden";
+      } else {
+        // when modal closed allow it to scroll
+        document.body.style.overflow = "";
+      }
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }, [showFavoriteModal, showWatchedModal]);
 
   return (
     <div className="App">
@@ -58,7 +98,11 @@ const App = () => {
         sortOption={sortOption}
       ></Header>
       <main>
-        <Sidebar></Sidebar>
+        <Sidebar
+          handleSidebarFavorites={handleSidebarFavorites}
+          handleSidebarWatched={handleSidebarWatched}
+          handleSidebarHome={handleSidebarHome}
+        ></Sidebar>
         <AppMainContent
           sortOption={sortOption}
           submittedQuery={submittedQuery}
@@ -66,9 +110,25 @@ const App = () => {
           setGridApiPage={setGridApiPage}
           section_title=""
           section_link=""
+          setShowFavoriteModal={setShowFavoriteModal}
+          setShowWatchedModal={setShowWatchedModal}
+          showFavoriteModal={showFavoriteModal}
+          showWatchedModal={showWatchedModal}
+          setFavoriteMovies={setFavoriteMovies}
+          setWatchedMovies={setWatchedMovies}
         ></AppMainContent>
       </main>
       <Footer></Footer>
+      <FavoriteWatchedModal
+        setShowFavoriteModal={setShowFavoriteModal}
+        setShowWatchedModal={setShowWatchedModal}
+        showFavoriteModal={showFavoriteModal}
+        showWatchedModal={showWatchedModal}
+        favoriteMovies={favoriteMovies}
+        watchedMovies={watchedMovies}
+        setFavoriteMovies={setFavoriteMovies}
+        setWatchedMovies={setWatchedMovies}
+      ></FavoriteWatchedModal>
     </div>
   );
 };

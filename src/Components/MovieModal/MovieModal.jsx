@@ -50,12 +50,12 @@ const MovieModal = ({
 
   const trailer = videos.results.find(
     (video) => video.site === "YouTube" && video.type === "Trailer"
-  );
-  console.log("trailer", trailer);
+  );;
   const trailerUrl = trailer
     ? `https://www.youtube.com/embed/${trailer.key}`
     : null;
 
+    // don't show modal
   if (!show) return null;
 
   return (

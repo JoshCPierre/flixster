@@ -12,7 +12,15 @@ import defaultImage from "../../assets/default_image.jpg";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
-const MovieList = ({ section_title, section_link, id }) => {
+const MovieList = ({
+  section_title,
+  section_link,
+  id,
+  setShowFavoriteModal,
+  setShowWatchedModal,
+  setFavoriteMovies,
+  setWatchedMovies
+}) => {
   const [movies, setMovies] = useState([]);
   const [currentMovies, setCurrentMovies] = useState([]);
   const [noMoreMovies, setNoMoreMovies] = useState(false); // if no more movies able to fetch
@@ -116,6 +124,7 @@ const MovieList = ({ section_title, section_link, id }) => {
       <div className="movies-list">
         {currentMovies.map((movie) => (
           <MovieCard
+            movie={movie}
             key={movie.id}
             title={movie.title}
             img={
@@ -125,6 +134,10 @@ const MovieList = ({ section_title, section_link, id }) => {
             }
             rating={movie.vote_average}
             onClick={() => handleCardClick(movie.id)}
+            setShowFavoriteModal={setShowFavoriteModal}
+            setShowWatchedModal={setShowWatchedModal}
+            setWatchedMovies={setWatchedMovies}
+            setFavoriteMovies={setFavoriteMovies}
           />
         ))}
       </div>
