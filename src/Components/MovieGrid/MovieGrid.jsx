@@ -21,7 +21,8 @@ const MovieGrid = ({
   setShowFavoriteModal,
   setShowWatchedModal,
   setFavoriteMovies,
-  setWatchedMovies
+  setWatchedMovies,
+  displayLikedWatchedContainer
 }) => {
   const [movies, setMovies] = useState([]);
   const [noMoreMovies, setNoMoreMovies] = useState(false); // if no more movies able to fetch
@@ -134,7 +135,8 @@ const MovieGrid = ({
                 setShowFavoriteModal={setShowFavoriteModal}
                 setShowWatchedModal={setShowWatchedModal}
                 setWatchedMovies={setWatchedMovies}
-              setFavoriteMovies={setFavoriteMovies}
+                setFavoriteMovies={setFavoriteMovies}
+                displayLikedWatchedContainer={displayLikedWatchedContainer}
               />
             ))}
           </div>

@@ -11,7 +11,7 @@ const MovieCard = ({
   movie,
   setFavoriteMovies,
   setWatchedMovies,
-  wa,
+  displayLikedWatchedContainer,
 }) => {
   const [favorite, setFavorite] = useState(false);
   const [watched, setWatched] = useState(false);
@@ -23,7 +23,8 @@ const MovieCard = ({
     setFavorite((prevFavorite) => {
       const newFavoriteState = !prevFavorite;
 
-      if (newFavoriteState) { // add movie
+      if (newFavoriteState) {
+        // add movie
         setFavoriteMovies((currentMovies) =>
           Array.from(new Set([...currentMovies, movie]))
         );
@@ -39,10 +40,11 @@ const MovieCard = ({
 
   const handleWatched = (event) => {
     event.stopPropagation();
-   setWatched((prevWatched) => {
+    setWatched((prevWatched) => {
       const newWatchedState = !prevWatched;
 
-      if (newWatchedState) { // add movie
+      if (newWatchedState) {
+        // add movie
         setWatchedMovies((currentMovies) =>
           Array.from(new Set([...currentMovies, movie]))
         );
@@ -61,24 +63,28 @@ const MovieCard = ({
       <img className="movie-image" src={img} alt={`Image for ${title}`} />
       <h4 className="movie-title">{title}</h4>
       <p className="movie-rating">Rating: {rating}</p>
-      <div className="liked-watched-container">
-        <img
-          src={favorite === false ? heartIcon : heartFull}
-          className="movie-favorite"
-          alt={title}
-          onClick={handleFavorite}
-        />
-        <button
-          className="movie-watched"
-          style={{
-            backgroundColor: watched ? "#555" : "",
-            color: watched ? "#fff" : "",
-          }}
-          onClick={handleWatched}
-        >
-          Watched
-        </button>
-      </div>
+      {displayLikedWatchedContainer ? (
+        <div className="liked-watched-container">
+          <img
+            src={favorite === false ? heartIcon : heartFull}
+            className="movie-favorite"
+            alt={title}
+            onClick={handleFavorite}
+          />
+          <button
+            className="movie-watched"
+            style={{
+              backgroundColor: watched ? "#555" : "",
+              color: watched ? "#fff" : "",
+            }}
+            onClick={handleWatched}
+          >
+            Watched
+          </button>
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

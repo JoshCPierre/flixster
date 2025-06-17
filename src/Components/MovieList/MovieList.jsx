@@ -19,7 +19,8 @@ const MovieList = ({
   setShowFavoriteModal,
   setShowWatchedModal,
   setFavoriteMovies,
-  setWatchedMovies
+  setWatchedMovies,
+  displayLikedWatchedContainer
 }) => {
   const [movies, setMovies] = useState([]);
   const [currentMovies, setCurrentMovies] = useState([]);
@@ -138,6 +139,7 @@ const MovieList = ({
             setShowWatchedModal={setShowWatchedModal}
             setWatchedMovies={setWatchedMovies}
             setFavoriteMovies={setFavoriteMovies}
+            displayLikedWatchedContainer={displayLikedWatchedContainer}
           />
         ))}
       </div>

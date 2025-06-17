@@ -116,6 +116,7 @@ const App = () => {
           showWatchedModal={showWatchedModal}
           setFavoriteMovies={setFavoriteMovies}
           setWatchedMovies={setWatchedMovies}
+          displayLikedWatchedContainer={true}
         ></AppMainContent>
       </main>
       <Footer></Footer>
@@ -128,6 +129,7 @@ const App = () => {
         watchedMovies={watchedMovies}
         setFavoriteMovies={setFavoriteMovies}
         setWatchedMovies={setWatchedMovies}
+        displayLikedWatchedContainer={false}
       ></FavoriteWatchedModal>
     </div>
   );

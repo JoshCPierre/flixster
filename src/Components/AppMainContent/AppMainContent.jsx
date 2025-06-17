@@ -11,7 +11,8 @@ const AppMainContent = ({
   setShowFavoriteModal,
   setShowWatchedModal,
   setFavoriteMovies,
-  setWatchedMovies
+  setWatchedMovies,
+  displayLikedWatchedContainer
 }) => {
   return (
     <div className="app-movie-list">
@@ -26,6 +27,8 @@ const AppMainContent = ({
         setShowWatchedModal={setShowWatchedModal}
         setFavoriteMovies={setFavoriteMovies}
         setWatchedMovies={setWatchedMovies}
+          displayLikedWatchedContainer={true}
+
       ></MovieGrid>
       <MovieList
         section_title="Popular"
@@ -35,6 +38,8 @@ const AppMainContent = ({
         setShowWatchedModal={setShowWatchedModal}
         setFavoriteMovies={setFavoriteMovies}
         setWatchedMovies={setWatchedMovies}
+          displayLikedWatchedContainer={true}
+
       ></MovieList>
       <MovieList
         section_title="Top Rated"
@@ -44,6 +49,8 @@ const AppMainContent = ({
         setShowWatchedModal={setShowWatchedModal}
         setFavoriteMovies={setFavoriteMovies}
         setWatchedMovies={setWatchedMovies}
+          displayLikedWatchedContainer={true}
+
       ></MovieList>
       <MovieList
         section_title="Upcoming"
@@ -53,6 +60,8 @@ const AppMainContent = ({
         setShowWatchedModal={setShowWatchedModal}
         setFavoriteMovies={setFavoriteMovies}
         setWatchedMovies={setWatchedMovies}
+          displayLikedWatchedContainer={true}
+
       ></MovieList>
     </div>
   );
