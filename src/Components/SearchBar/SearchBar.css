@@ -41,3 +41,31 @@
     /* background: #636262; */
     color:rgb(213, 37, 37);
 }
+
+
+
+
+@media screen and (max-width: 768px) {
+  
+.search-bar {
+    min-width: 120px;
+}
+
+
+
+.search-bar input[type="text"] {
+    width: 40px;
+    font-size: 1rem;
+}
+
+
+.search-bar button {
+   min-width: 50px;
+}
+
+.clear-button {
+    min-width: 20px;
+
+}
+  
+}

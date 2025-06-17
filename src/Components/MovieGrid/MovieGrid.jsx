@@ -113,8 +113,8 @@ const MovieGrid = ({
   return (
     <>
       {movies.length > 0 && (
-        <section id="now-playing" className="section-container">
-          <h1 className="section-title">{section_title}</h1>
+        <section id="now-playing" className="grid-container">
+          <h1 className="grid-title">{section_title}</h1>
           <div className="movies-grid">
             {movies.map((movie) => (
               <MovieCard

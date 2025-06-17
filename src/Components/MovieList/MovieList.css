@@ -49,3 +49,16 @@ right: 30px;
   color: rgb(255, 0, 0);
   background-color: black;
 }
+
+
+
+@media screen and (max-width: 720px) {
+  /* change text size */
+  /* change flex */
+  /* change nav-bar */
+
+  .section-container {
+    display:none;
+
+  }
+}

@@ -75,3 +75,21 @@
 .movie-trailer-container {
     margin-bottom: 40px;
 }
+
+
+@media screen and (max-width: 1080px) {
+  
+    .modal-content {
+        width: 70%;
+        height: 70%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+   .modal-content {
+        width: 70%;
+        height: 50%;
+    }
+}

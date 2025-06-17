@@ -46,7 +46,6 @@ const App = () => {
     // console.log(searchQuery);
   }
 
-  // always return to top on window refresh
 
   return (
     <div className="App">
