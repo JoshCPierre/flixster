@@ -39,11 +39,21 @@ const MovieCard = ({
 
   const handleWatched = (event) => {
     event.stopPropagation();
-    setWatched((prevWatched) => !prevWatched);
+   setWatched((prevWatched) => {
+      const newWatchedState = !prevWatched;
 
-    setWatchedMovies((prevMovies) =>
-      Array.from(new Set([...prevMovies, movie]))
-    );
+      if (newWatchedState) { // add movie
+        setWatchedMovies((currentMovies) =>
+          Array.from(new Set([...currentMovies, movie]))
+        );
+      } else {
+        // remove movie
+        setWatchedMovies((currentMovies) =>
+          currentMovies.filter((m) => m.id !== movie.id)
+        );
+      }
+      return newWatchedState;
+    });
   };
 
   return (
