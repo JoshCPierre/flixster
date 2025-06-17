@@ -52,12 +52,12 @@ right: 30px;
 
 
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1024px) {
   /* change text size */
   /* change flex */
   /* change nav-bar */
 
-  .section-container {
+  .movies-list {
     display:none;
 
   }

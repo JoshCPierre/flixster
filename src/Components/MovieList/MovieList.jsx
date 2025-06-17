@@ -73,7 +73,8 @@ const MovieList = ({
           `https://api.themoviedb.org/3/movie/${section_link}?api_key=${API_KEY}&page=${listApiPage}`
         );
         setMovies(data.results); // movies now gets set to data.results
-        setCurrentChunkIndex(0);
+
+        setCurrentChunkIndex(0); // reset chunk as new movies fetched
         console.log(data.results);
       } catch (err) {
         console.log("error fetching list:", err);
