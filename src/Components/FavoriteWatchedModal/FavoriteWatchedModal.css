@@ -29,7 +29,7 @@
 
 .favorite-watched-modal-grid {
   display: grid;
-  margin-left: 80px;
+  margin-left: 100px;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 24px;
 
