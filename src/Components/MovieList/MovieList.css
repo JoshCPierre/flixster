@@ -1,0 +1,64 @@
+.movies-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  gap: 20px;
+}
+
+.section-container {
+  margin-top: 50px;
+  position: relative;
+}
+
+.section-header {
+  flex-direction: row;
+  align-items: center;
+  margin: 0px 20px;
+}
+
+.section-title {
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.arrows {
+    top:50%;
+    position: absolute;
+  font-size: 60px;
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateY(-20%);
+  z-index: 1;
+  padding: 0px 20px;
+  border-radius: 124px;
+  margin: 0px;
+  user-select: none; /* can't highlight, sometimes happnes when clicking */
+  transition: color 0.1s ease;
+
+
+}
+
+.left {
+left: 30px;
+}
+.right {
+right: 30px;
+}
+
+.arrows:hover {
+  cursor: pointer;
+  color: rgb(255, 0, 0);
+  background-color: black;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  /* change text size */
+  /* change flex */
+  /* change nav-bar */
+
+  .movies-list {
+    display:none;
+
+  }
+}

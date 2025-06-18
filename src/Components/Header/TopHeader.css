@@ -1,0 +1,36 @@
+.top-header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.website-title {
+  font-size: 50px;
+   text-shadow: 1px 1px #ffffff;
+
+}
+
+nav {
+  margin-right: 20px;
+}
+
+
+ul li {
+  font-size: 20px;
+}
+
+
+.nav-link {
+  color: #e9ecef;
+  transition: color 0.2s ease;
+}
+
+.nav-link:visited {
+  color: #e9ecef;
+}
+
+.nav-link:hover {
+  color: rgb(213, 37, 37);
+  padding-bottom: 4px;
+  border-bottom: 2px solid rgb(213, 37, 37);
+}

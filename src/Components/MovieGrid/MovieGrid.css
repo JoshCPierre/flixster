@@ -1,0 +1,151 @@
+.movies-grid {
+    display: grid;
+    /* grid-template-columns: repeat(5, 1fr);    */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    row-gap: 84px;
+    justify-items: center;
+    align-items: stretch;
+}
+
+.grid-container {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+
+.grid-title {
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.load-more {
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 32px auto 0 auto;
+    display: block;
+    transition: background 0.2s, color 0.2s ease;
+}
+
+.load-more:hover {
+    /* background: #222; */
+    color:rgb(213, 37, 37);
+}
+
+
+
+/* @media screen and (max-width: 1600px) {
+  
+
+  .movies-grid {
+    grid-template-columns: repeat(4, 1fr);   
+    column-gap: 0px;
+    row-gap: 54px;
+  }
+
+
+
+}
+
+
+@media screen and (max-width: 1560px) {
+  
+
+  .movies-grid {
+    grid-template-columns: repeat(3, 1fr);   
+    
+  }
+}
+
+
+
+@media screen and (max-width: 1460px) {
+
+
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr);   
+    row-gap: 24px;
+  }
+
+}
+
+
+@media screen and (max-width: 1024px) {
+  
+
+  .movies-grid {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+} */
+
+
+
+@media screen and (max-width: 1600px) {
+  .movies-grid {
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    row-gap: 54px;
+  }
+  .movie-card-container {
+    height: 480px;
+    max-width: 250px; 
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .movies-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .movie-card-container {
+    height: 460px;
+    min-width: 220px; 
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .movies-grid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 16px;
+  }
+  .movie-card-container {
+    height: 440px; 
+    min-width: 180px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
+  }
+  .movie-card-container {
+    height: 480px; 
+    max-width: 260px; 
+    min-width: 50px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .movies-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px; 
+    padding: 0 10px;
+  }
+  .movie-card-container {
+    width: 90%;
+    max-width: 300px;
+    height: 540px; 
+  }
+}
