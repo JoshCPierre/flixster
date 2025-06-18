@@ -123,4 +123,4 @@ My presentation went well and I was proud that I implemented all my features> I 
 
 ### Shout out
 
-Shoutout to devarsh for helping me out with fetch + lucia with side bar modal.
+Shoutout to devarsh for helping me out with fetch + lucia with side bar modal
